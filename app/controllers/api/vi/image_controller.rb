@@ -10,8 +10,10 @@ module Api
         if image and image.update_attributes(image_params)
           image = image.reload
           #debugger
+          debugger
           #send_file image.avatar.file.path, :type => image.avatar.file.content_type, :disposition => :attachment
-          render :html => "<img src='#{image.avatar.file.path}'>".html_safe
+          #render :html => "<img src='#{image.avatar.file.path}'>".html_safe
+          render :html => "<img src='#{root_url}#{image.avatar.url}'>".html_safe
         else
           render :text => "failed"
         end
