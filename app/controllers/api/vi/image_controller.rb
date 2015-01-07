@@ -5,8 +5,8 @@ module Api
       
       def crop
         image_url = params[:image_url]
-        image = Image.create(:remote_avatar_url => "https://lh3.googleusercontent.com/-sA9Y-Qjts3U/UuATD1RfMyI/AAAAAAADTv8/poL5F-7iR3s/s630-fcrop64=1,005d0000ffa1ffff/google%252B.jpg")
-        #image = Image.create(:remote_avatar_url => image_url)
+        #image = Image.create(:remote_avatar_url => "https://lh3.googleusercontent.com/-sA9Y-Qjts3U/UuATD1RfMyI/AAAAAAADTv8/poL5F-7iR3s/s630-fcrop64=1,005d0000ffa1ffff/google%252B.jpg")
+        image = Image.create(:remote_avatar_url => image_url)
         if image and image.update_attributes(image_params)
           image = image.reload
           #debugger
