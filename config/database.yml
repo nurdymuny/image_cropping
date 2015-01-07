@@ -1,8 +1,0 @@
-development:
-  adapter: mysql2
-  database: crop_app_dev
-  pool: 5
-  timeout: 5000
-  username: root
-  password:
-  host: localhost

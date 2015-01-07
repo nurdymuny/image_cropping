@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  #resources :images do
-  #  member do
-  #   post 'crop'
-  #  end
-  #end
+  resources :images do
+    collection do
+     post 'crop'
+    end
+  end
   
   namespace :api do
     namespace :vi do
