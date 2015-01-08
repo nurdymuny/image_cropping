@@ -16,8 +16,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  #version :thumb do
+  #  resize_to_limit(80,80)
+  #  process crop: :avatar  ## Crops this version based on original image
+  #end
   
-  process crop: :avatar
+  process crop: [:avatar, 150, 150]
   
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     namespace :vi do
       resources :image, :only => [] do
         collection do
-         post 'crop'
+         match 'crop', via: [:get, :post]
         end
       end
     end
